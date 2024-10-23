@@ -1,0 +1,6 @@
+type: object
+properties:
+  message:
+    type: string
+    description: result of the conversion
+    example: Classes generated successfully
