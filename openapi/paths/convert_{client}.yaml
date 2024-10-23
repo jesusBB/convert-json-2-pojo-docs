@@ -1,0 +1,26 @@
+get:
+  tags:
+    - Conversion
+  summary: Convert Json to Pojos
+  description: Convert Json to Pojos
+  operationId: convertJson2Pojo
+  parameters:
+    - name: website
+      in: path
+      description: website client
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/ConversionResult.yaml'
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/NotFoundResponse.yaml'

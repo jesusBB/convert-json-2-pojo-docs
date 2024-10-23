@@ -33,27 +33,7 @@ externalDocs:
   url: https://github.com/Redocly/create-openapi-repo
 paths:
   /v1/convert/{website}:
-    get:
-      tags:
-        - Conversion
-      summary: Convert Json to Pojos
-      description: Convert Json to Pojos
-      operationId: convertJson2Pojo
-      parameters:
-        - name: website
-          in: path
-          description: website client
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/conversionResult'
-
+    $ref: 'paths/convert_{client}.yaml'
 components:
   securitySchemes:
     main_auth:
@@ -75,9 +55,4 @@ components:
       scheme: basic
   schemas:
     conversionResult:
-      type: object
-      properties:
-        message:
-          type: string
-          description: result of the conversion
-          example: Classes generated successfully
+      $ref: 'components/schemas/ConversionResult.yaml'

@@ -1,0 +1,6 @@
+type: object
+properties:
+  message:
+    type: string
+    description: Error send when client is not found
+    example: Client not found
